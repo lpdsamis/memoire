@@ -1,0 +1,128 @@
+\chapter{العزوم الحركية}
+\label{Chapter3}
+%----------------------------------------------------------------------------------------
+\section{العزم الحركي المداري}
+كمية الحركة  الزاوية أو العزم الحركي المداري كمية متجهة نطبق عليها نظام المتجهات و تعرف بالعلاقة التالية :
+\begin{equation}
+	\label{eqn:3-1}
+	\vec{L} = \vec{r} \times \vec{p} =m(\vec{r} \times \vec{v})
+\end{equation} 
+حيث $L$ كمية الحركة الزاوية المدارية، $m$ كتلة الجسيم، $r$ نصف قطر الدوران، $v$ السرعة. و بتطبيق قاعدة ضرب المتجهات نجد : 
+\[\vec{L}=
+\begin{vmatrix}
+	\vec{i} & \vec{j} & \vec{k}\\ 
+	x & y & z\\
+	p_{x} & p_{y} & p_{z} 
+\end{vmatrix}
+\]
+و منه نجد مركبة كمية الحركة الزاوية (الزخم الزاوي) و موضع الجسيم و زخمه الخطي، على المحاور الديكارتية كما يلي :
+\begin{equation}
+	\label{eqn:3-2}
+	\begin{array}{ccl}
+	L_{x} & = &  yp_{z} - zp_{y} \\
+	L_{y} & = & zp_{x} - xp_{z} \\
+	L_{z} & = & xp_{y} - yp_{x}
+	\end{array}
+\end{equation} 
+و الحصول على المركبات الديكارتية بواسطة التطبيق المتكرر للتبديل الدوري $x \longrightarrow y, y \longrightarrow z, z \longrightarrow x$. يلعب العزم الحركي دورا مهما في ميكانيكا الكم، حيث انه مقدار فيزيائي مكمم، و قد مكن من فهم الطبيعة المغناطيسية للأجسام. يمثل العزم الحركي الزاوي بمؤثر  حيث نستبدل شعاعي الموضع و الزخم الخطي  في المعادلة \eqref{eqn:3-1} بالمؤثرين $\hat{\vec{r}}$  و $ -i\hbar \vec{\nabla}$ على التوالي، و نكتب :
+\begin{equation}
+\hat{\vec{L}}	= -i\hbar \hat{\vec{r}} \times \vec{\nabla}
+\end{equation}
+و بتحويل العلاقات \eqref{eqn:3-2} إلى ممؤثرات في الإحدثيات الديكارتية نجد :
+ \begin{equation}
+ 	\label{eqn:3-4}
+ 	\begin{array}{ccl}
+ 		\hat{L_{x}} & = &  \hat{y}\hat{p_{z}} - \hat{z}\hat{p_{y}} =-i\hbar (y\dfrac{\partial}{\partial z} - z \dfrac{\partial}{\partial y}) \\
+ 		\hat{L_{y}} & = &  \hat{z}\hat{p_{x}} - \hat{x}\hat{p_{z}} =-i\hbar (z\dfrac{\partial}{\partial x} - x \dfrac{\partial}{\partial z}) \\
+ 		\hat{L_{z}} & = &  \hat{x}\hat{p_{y}} - \hat{y}\hat{p_{x}} =-i\hbar (x\dfrac{\partial}{\partial y} - y \dfrac{\partial}{\partial x})
+ 	\end{array}
+ \end{equation} 
+يمكن إشتقاق بعض خصائص المؤثر بإستعمال $ \hat{L}$ جبر المبادلة.
+\begin{equation}
+	\label{eqn:3-5}
+	\begin{array}{ccl}
+		[\hat{L_{x}}, \hat{y}] & = &  [\hat{y}\hat{p_{z}} - \hat{z}\hat{p_{y}}, \hat{y}] \\
+		 & = & -\hat{z}[\hat{p_{y}}, \hat{y}] \\
+		& = & i\hbar \hat{z}
+	\end{array}
+\end{equation} 
+\begin{equation}
+	\label{eqn:3-6}
+	\begin{array}{ccl}
+		[\hat{L_{x}}, \hat{p_{y}}] & = &  [\hat{y}\hat{p_{z}} - \hat{z}\hat{p_{y}}, \hat{p_{y}}] \\
+		& = & [\hat{y},\hat{p_{y}}]\hat{p_{z}} \\
+		& = & i\hbar \hat{p_{z}}
+	\end{array}
+\end{equation} 
+\begin{equation}
+	[\hat{L_{x}}, \hat{x}] = 0 , ~~~~~~~ [\hat{L_{x}}, \hat{p_{x}}] = 0
+\end{equation}
+و كذلك تعرف المبدلات بين مختلف مركبات $\hat{\vec{L}}$ كما يلي : 
+\begin{equation}
+	\label{eqn:3-8}
+	\begin{array}{ccl}
+		[\hat{L_{x}}, \hat{L_{y}}] & = &  [\hat{L_{x}}, \hat{z}\hat{p_{x}}-\hat{x}\hat{p_{z}}] \\
+		& = & [\hat{L_{x}},\hat{z}]\hat{p_{x}}- \hat{x}[\hat{L_{x}}, \hat{p_{x}}]\\
+		& = & - i\hbar \hat{y}\hat{p_{x}} + i\hbar \hat{x}\hat{p_{y}} \\
+		& = & i\hbar \hat{L_{z}}
+	\end{array}
+\end{equation} 
+الحسابات المماثلة تسفر عن المبدلين الآخرين، ونحصل أخيرا على:
+\begin{equation}
+	\label{eqn:3-9}
+	\begin{aligned}
+	[\hat{L_{x}}, \hat{L_{y}}] & =  i\hbar \hat{L_{z}}  \\
+	[\hat{L_{y}}, \hat{L_{z}}] & =  i\hbar \hat{L_{x}} \\
+	[\hat{L_{z}}, \hat{L_{x}}] & =  i\hbar \hat{L_{y}} 
+    \end{aligned}
+\end{equation} 
+نلاحظ أن مؤثرات المركبات الثلاث للزخم الزاوي لا يتبادل أحدهما مع اﻵخر، أي غير قابلة للقياس المتزامن. الكمية اﻷخرى ذات اﻷهمية البالغة هي مربع مقدار الزخم الزاوي المداري أو مجموع مربعات المركبات الثلاثة للزخم الزاوي المداري. وتأخذ علاقة المؤثر الموافق لهذه الكمية الشكل التالي:
+\begin{equation}
+	L^{2} = L_{x}^{2}~+ ~L_{y}^{2} ~+~ L_{z}^{2}
+\end{equation}
+و بناءا على معادلات \eqref{eqn:3-9} يتبادل المؤثر
+$\hat{L}^{2}$ 
+مع كل المركبات الثلاث للزخم الزاوي : 
+\begin{equation}
+	[\hat{L}^{2}, \hat{L_{x}}] = [\hat{L}^{2}, \hat{L_{y}} ]= [\hat{L}^{2}, \hat{L_{z}}]  =0
+\end{equation}
+و يمكن كتابة العلاقة اﻷخير كا لتالي :
+\begin{equation}
+	[\hat{L}^{2}, \hat{L}]  =0
+\end{equation}
+و من المفيد أن نعرف مؤثرين يلعبان دورا مشابها لدور مؤثري‫ الخلق‬ ‫والإفناء‬ اللذين استخدما في مسألة المتذبذب التوافقي، و نقصد بذلك :
+\begin{equation}
+	\label{eqn:3-10}
+	\begin{aligned}
+	\hat{L_{+}} & = \hat{L_{x}} + i \hat{L_{y}} \\
+	\hat{L_{-}} & = \hat{L_{x}} - i \hat{L_{y}}
+	\end{aligned}
+\end{equation}
+مثلا مؤثري المتذبذ التوافقي، فإن $ \hat{L_{+}} $ و $\hat{L_{-}}$ ليس هرميتيان و تحققان علاقة التبديل التالية :
+\begin{equation}
+	\label{eqn:3-11}
+	\begin{aligned}
+		[\hat{L_{z}}, \hat{L_{+}} ]& = \hbar \hat{L_{+}} \\
+		[\hat{L_{z}}, \hat{L_{-}} ]& = -\hbar \hat{L_{-}} \\
+		[\hat{L_{+}}, \hat{L_{-}} ]& = 2\hbar \hat{L_{z}} \\
+		[\hat{L^{2}}, \hat{L_{+}}] & = [\hat{L^{2}}, \hat{L_{-}}] = [\hat{L^{2}}, \hat{L_{z}}] =0
+	\end{aligned}
+\end{equation}
+وهكذا نكون قد أنشأنا علاقات التبديل لمكونات الزخم الزاوي لجسيم غير مغزلي. يمكن تعميم هذه النتيجة على نظام من الجسيمات غير المغزلية. الزخم الزاوي الإجمالي لمثل هذا النظام هو، في ميكانيكا الكم :
+\begin{equation}
+L=	\sum_{i = 1}^N L^i
+\end{equation}
+
+\section{القيم الخاصة للزخم الزاوي}
+القيم الخاصة  
+$\hat{L}^{2}$ و $\hat{L}_{z}$, 
+يشتركان في نفس الحالات الخاصة :
+\section{الحــالة العامة لجمع عزمين}
+
+\section{معاملات كلابش- جوردن}
+
+\section{المؤثرات السلمية والشعاعية والموترة غير القابلة للإختزال}
+
+\section{نظر يــة فيغنر-إكار}
+
+

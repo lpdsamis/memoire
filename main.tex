@@ -1,0 +1,235 @@
+\documentclass[14pt,a4paper,onecolumn,notitlepage]{book}
+\usepackage{amsmath, amssymb, mathtools}
+% ============
+\usepackage{setspace}
+\usepackage{placeins}
+% ============
+\usepackage{tabularx,fontspec,fancyhdr,graphicx,fourier-orns,color,pifont}
+\usepackage[pdfauthor={},pdftitle={كتاب LaTeX باللغة العربية}]{hyperref}
+\hypersetup{
+	bookmarks=true,
+	unicode=true,
+	colorlinks=true,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=slategray2Dark,
+	urlcolor=slategray2Dark}
+\usepackage[depthadjust]{marginnote}
+\usepackage[usenames,dvipsnames]{xcolor}
+\graphicspath{ {./img/} }
+\usepackage[showframe=false,includeheadfoot]{geometry}
+\geometry{verbose,top=5mm,headheight=20mm,headsep=10mm,hmargin=18mm,bottom=15mm,footskip=18mm,marginparsep=5mm,marginparwidth=28mm,left=1.5in,right=1in,textwidth=300pt}
+\usepackage{polyglossia}
+\usepackage[backend=bibtex,citestyle=numeric-comp,sorting=none, natbib=true]{biblatex}
+\addbibresource{./REF/chapter_0.bib}
+\addbibresource{./REF/chapter_1.bib}
+\addbibresource{./REF/chapter_2.bib}
+\addbibresource{./REF/chapter_3.bib}
+\usepackage{titlesec}
+%\titleformat{\chapter}[hang]
+\titleformat{\chapter}[frame]
+{\normalfont\sffamily\medium\bfseries\color{black}}
+{\chaptertitlename \thechapter}{1.1em}{}
+\titleformat{\section}
+{\normalfont\sffamily\small\bfseries\color{black}}
+{\thesection}{0.50em}{}
+\titleformat{\subsection}
+{\normalfont\sffamily\small\bfseries\color{black}} %\bfseries
+{\thesubsection}{0.50em}{}
+%%====================
+\titleformat{\subsubsection}
+{\normalfont\sffamily\small\bfseries\color{black}} %\bfseries
+{\thesubsubsection}{0.50em}{}
+%%====================
+\usepackage{framed}
+\usepackage{layout}
+\usepackage{tocloft} % to customize Table of Contents and add dots between chapters and page numbers
+\usepackage{setspace} % to add \doublespacing
+\usepackage[Q=yes]{examplep} % for verbatim description lists and titles \Q and \PVerb
+% Font styles and settings
+%\setmainfont[Ligatures=TeX]{Amiri}
+\setsansfont[Ligatures=TeX,Script=Arabic,Scale=1.5]{Amiri}
+%\setmonofont{Courier New}
+\newfontfamily\arabicfont[Script=Arabic, Ligatures=TeX]{Amiri}
+\newfontfamily\englishfont[Script=Arabic,Scale=1]{Amiri}
+% set numerals=maghrib so page numbers are displayed in Arabic instead of
+% eastern Arabic numerals. Otherwise, remove it for eastern Arabic numerals.
+%\setmainlanguage[numerals=maghrib]{arabic}
+\setdefaultlanguage[numerals=maghrib,calendar=gregorian]{arabic}
+\setotherlanguage{english}
+% Page styles and margins
+% \pagestyle{headings}
+\pagestyle{fancy}
+% with this we ensure that the chapter and section
+% headings are in lowercase.
+\renewcommand{\sectionmark}[1]{%
+	\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+	\markright{\thesection #1}}
+\fancyhf{}  % delete current header and footer
+% \fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[L]{\bfseries\footnotesize\rightmark}
+\fancyhead[R]{\bfseries\footnotesize\leftmark}
+%\fancyfoot[L]{\bfseries\footnotesize\leafleft\href{http://www.HZ1YR.com}{HZ1YR.com}\leafright}
+\fancyfoot[C]{\bfseries \thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % space for the rule
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\fancyhead{} % get rid of headers on plain pages
+	\fancyfoot[C]{\bfseries\footnotesize\thepage} % except the center
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}}
+
+% Setting newcommands
+%
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand*{\marginfont}{\color{slategray2}\sffamily}
+
+% Title and Author data
+% 
+\providecommand{\HUGE}{\Huge}% if not using memoir
+\newlength{\drop}% for my convenience
+\thispagestyle{plain}
+\newcommand*{\titleLL}{\begingroup% Lost Languages
+	\drop=0.1\textheight
+	\fboxsep 0.5\baselineskip
+	\sffamily
+	\vspace*{\drop}
+	\centering
+	{\textcolor{SkyBlue}{\HUGE نموذج مذكرة}}\par
+	\vspace{0.5\drop}
+			المؤطر : د.عميري بن عامر
+	\vspace{\drop}
+	\vfill
+	{\footnotesize{ينايـــر 2020م}}\par
+	\vspace*{\drop}
+	\endgroup}
+\newenvironment{dedication}
+{
+	\cleardoublepage
+	\vspace*{\stretch{1}}
+	\hfill\begin{minipage}[t]{0.66\textwidth}
+		\raggedleft
+	}%
+	{
+	\end{minipage}
+	\vspace*{\stretch{3}}
+	\begin{center}
+		\color{slategray2}
+		{\Huge\decoone}
+	\end{center}
+	% \clearpage	
+}
+
+% New colored framed box environment
+\newenvironment{cframed}[1][white]
+{\def\FrameCommand{\fboxsep=\FrameSep\fcolorbox{#1}{Dark}}%
+	\MakeFramed {\advance\hsize-\width \FrameRestore}}
+{\endMakeFramed}
+
+% Include dots between chapter name and page number
+\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+% COLORS
+\definecolor{darkgreen}{rgb}{0.4, 0.01, 0.24}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\definecolor{brown}{rgb}{0.4, 0.01, 0.24}
+\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95}
+\definecolor{unitednationsblue}{rgb}{0.36, 0.57, 0.9}
+\definecolor{blue(rgb)}{rgb}{0.01, 0.28, 1.0}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{screamingreen}{rgb}{0.46, 1.0, 0.44}
+\definecolor{limegreen}{rgb}{0.2, 0.8, 0.2}
+\definecolor{islamicgreen}{rgb}{0.0, 0.56, 0.0}
+\definecolor{upforestgreen}{rgb}{0.0, 0.27, 0.13}
+\definecolor{icterine}{rgb}{0.99, 0.97, 0.37}
+\definecolor{orange(colorwheel)}{rgb}{1.0, 0.5, 0.0}
+\definecolor{orange-red}{rgb}{1.0, 0.27, 0.0}
+\definecolor{oucrimsonred}{rgb}{0.6, 0.0, 0.0}
+\definecolor{cottoncandy}{rgb}{1.0, 0.74, 0.85}
+\definecolor{orchid}{rgb}{0.85, 0.44, 0.84}
+\definecolor{vividcerise}{rgb}{0.85, 0.11, 0.51}
+\definecolor{patriarch}{rgb}{0.5, 0.0, 0.5}
+\definecolor{lightbrown}{HTML}{BF6830}
+\definecolor{gray}{HTML}{616D7E}
+\definecolor{slategray2}{HTML}{B4CFEC}
+\definecolor{slategray2Dark}{HTML}{3B6999}
+\definecolor{slategray2Light}{HTML}{CADFF6}
+\definecolor{slategray2VeryLight}{HTML}{D5E5F6}
+\definecolor{slategray2Gray}{HTML}{92A1B1}
+
+
+% Set double spacing for the text
+\doublespacing
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+%% \renewcommand{\theequation}{\arabic{section}.\alph{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\parindent=0pt
+\makeatletter
+%\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+\begin{document}
+	
+	\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+	\tableofcontents % Prints the main table of contents
+	
+	\listoffigures % Prints the list of figures
+	
+	\listoftables % Prints the list of tables
+	
+	%----------------------------------------------------------------------------------------
+	%	ABBREVIATIONS
+	%----------------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------------
+	%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+	%----------------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------------
+	%	SYMBOLS
+	%----------------------------------------------------------------------------------------
+	
+	%----------------------------------------------------------------------------------------
+	%	DEDICATION
+	%----------------------------------------------------------------------------------------
+	
+
+	% Include the chapters of the thesis as separate files from the Chapters folder
+	% Uncomment the lines as you write the chapters
+	\include{Chapters/Chapter0}
+	\include{Chapters/Chapter1}
+	\include{Chapters/Chapter2} 
+	\include{Chapters/Chapter3}
+	\include{Chapters/Chapter4} 
+	\include{Chapters/Chapter5}
+	 \include{Chapters/Chapter6}
+	 
+	
+	%----------------------------------------------------------------------------------------
+	%	THESIS CONTENT - APPENDICES
+	%----------------------------------------------------------------------------------------
+	
+	\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+	
+	% Include the appendices of the thesis as separate files from the Appendices folder
+	% Uncomment the lines as you write the Appendices
+	
+	%\include{Appendices/AppendixA}
+	%\include{Appendices/AppendixB}
+	%\include{Appendices/AppendixC}
+	
+	%----------------------------------------------------------------------------------------
+	%	BIBLIOGRAPHY
+	%----------------------------------------------------------------------------------------
+	%\printbibliography
+	\printbibliography[heading=bibintoc]
+	
+	%----------------------------------------------------------------------------------------
+	
+\end{document}  
